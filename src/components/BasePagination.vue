@@ -39,17 +39,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const emit = defineEmits<Emits>()
 
-// function getMinAndMaxPages() {
-//   const min = ref(minPageNumber.value)
-//   const max = ref(maxPageNumber.value)
-//   //先看小于的情况
-//   const difference = max.value - min.value;
-//   if(difference < props.visiblePages - 1){
-//     //此时说明当前页是在边缘的
-
-//   }
-//   return { min, max }
-// }
 const pageNumber = computed(() => Math.ceil(props.total / props.limit)) //总页数
 const minPageNumber = computed(() => {
   let num = props.currentPage - Math.floor(props.visiblePages / 2) + 1
