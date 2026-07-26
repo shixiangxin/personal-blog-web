@@ -10,15 +10,12 @@
   </div>
 </template>
 <script setup lang="ts">
-defineProps({
-  url: {
-    type: String,
-    required: true,
-  },
-  size: {
-    type: Number,
-    default: 100,
-  },
+interface Props {
+  url: string
+  size?: number
+}
+withDefaults(defineProps<Props>(), {
+  size: 100,
 })
 </script>
 <style lang="scss" scoped>
