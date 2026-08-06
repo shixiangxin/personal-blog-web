@@ -1,7 +1,17 @@
 <template>
-  <div class="home-view-container">1</div>
+  <div class="home-view-container">
+    <HomeBanner />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomeBanner from './HomeBanner.vue'
+</script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.home-view-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+</style>

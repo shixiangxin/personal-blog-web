@@ -25,7 +25,7 @@ interface Emits {
   (e: 'load'): void
 }
 const props = withDefaults(defineProps<Props>(), {
-  duration: 500,
+  duration: 1500,
 })
 const emit = defineEmits<Emits>()
 
@@ -44,7 +44,7 @@ function handleLoad() {
   height: 100%;
   position: relative;
   img {
-    @include mixin.self-center();
+    @include mixin.self-fill();
     object-fit: cover;
   }
   .placeholder {

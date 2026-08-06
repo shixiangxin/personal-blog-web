@@ -26,7 +26,7 @@ type MenuItemConfig = {
 
 const items: MenuItemConfig[] = [
   { link: '/', title: '首页', icon: 'home' },
-  { link: '/blog', title: '文章', icon: 'blog', startWith: true },
+  { link: '/article', title: '文章', icon: 'blog', startWith: true },
   { link: '/about', title: '关于我', icon: 'about' },
   { link: '/project', title: '项目&效果', icon: 'code' },
   { link: '/message', title: '留言板', icon: 'chat' },
