@@ -1,3 +1,4 @@
+import type { RouteRecordRaw } from 'vue-router'
 import Home from '@/views/Home'
 import About from '@/views/About'
 import Blog from '@/views/Blog'
@@ -10,4 +11,4 @@ export default [
   { name: 'Blog', path: '/article', component: Blog },
   { name: 'Project', path: '/project', component: Project },
   { name: 'Message', path: '/message', component: Message },
-]
+] satisfies RouteRecordRaw[]
