@@ -32,7 +32,7 @@ interface Emits {
   (e: 'pageChange', page: number): void
 }
 const props = withDefaults(defineProps<Props>(), {
-  total: 0,
+  total: 100,
   currentPage: 1,
   limit: 10,
   visiblePages: 10,

@@ -4,7 +4,8 @@ import { type ObjectDirective } from 'vue'
 export const vLoading: ObjectDirective<HTMLElement> = {
   beforeMount(el, binding) {
     if (!binding.value) return
-    if (window.getComputedStyle(el).position === 'static') {
+    const elStyle = window.getComputedStyle(el)
+    if (elStyle.position === '' || elStyle.position === 'static') {
       el.style.position = 'relative'
     }
     const image = new Image()
@@ -16,9 +17,8 @@ export const vLoading: ObjectDirective<HTMLElement> = {
     el.appendChild(container)
   },
   beforeUpdate(el, binding) {
-    const e = el.querySelector(`.${style.loading}`)
-    if (binding.value === false && e !== null) {
-      el.removeChild(e)
-    }
+    const e = el.querySelector<HTMLElement>(`.${style.loading}`)
+    if (!e) return
+    e.style.display = binding.value ? 'flex' : 'none'
   },
 }

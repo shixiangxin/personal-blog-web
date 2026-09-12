@@ -1,4 +1,7 @@
 @use './var';
+* {
+  box-sizing: border-box;
+}
 html {
   color: var.$words;
   font-family:
@@ -16,4 +19,10 @@ a {
   &:hover {
     color: var.$primary;
   }
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

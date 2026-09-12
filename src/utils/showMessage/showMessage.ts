@@ -17,7 +17,7 @@ export default function showMessage(options: MessageOptions = {}): MessageHandle
     target.style.position = 'relative'
   }
 
-  /** 卸载 Vue 组件并删除挂载节点 */
+  // 卸载 Vue 组件并删除挂载节点
   function destroy(): void {
     if (destroyed) return
 
@@ -39,13 +39,15 @@ export default function showMessage(options: MessageOptions = {}): MessageHandle
 
   target.appendChild(mountNode)
   render(vnode, mountNode)
-
+  if (options.duration) {
+    setTimeout(destroy, options.duration)
+  }
   return {
-    /** 调用组件暴露的 close 方法 */
+    // 调用组件暴露的 close 方法
     close(): void {
       const exposed = vnode.component?.exposed as MessageExposed | null | undefined
-      destroy()
       exposed?.close()
+      destroy()
     },
     open(): void {},
   }
